@@ -4,14 +4,10 @@ module Cols
 
   module ClassMethods
 
-    def cols(name = nil)
-      arr = []
-      if name
-        arr = columns.collect { |c| c unless (/#{name}/i =~ c.name).nil? }
-      else
-        arr = columns
-      end
-      ap arr.compact.map { |e| e.name }.try(:sort)
+    def cols(*args)
+      reg_str = *args.map(&:to_s).join(')|(')
+      regex = /(#{reg_str})/im
+      column_names.select{|name| name =~ regex}.sort
     end
   end
 
