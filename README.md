@@ -11,8 +11,8 @@ Agrep
 
 ```ruby
 User.last.agrep "oh"
-# {"name"=>"John"} )
+# {"name"=>"John"}
 
 User.last.agrep "mail"
-# {"email"=>"test@mailinator.com"} )
+# {"email"=>"test@mailinator.com"}
 ```
