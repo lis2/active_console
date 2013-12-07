@@ -1,9 +1,7 @@
 module Cols
-
   extend ActiveSupport::Concern
 
   module ClassMethods
-
     def cols(*args)
       reg_str = *args.map(&:to_s).join(')|(')
       regex = /(#{reg_str})/im
@@ -11,10 +9,5 @@ module Cols
     end
   end
 
-  module InstanceMethods
-
-  end
-
   ActiveRecord::Base.send(:include, Cols)
-
 end
