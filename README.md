@@ -34,3 +34,25 @@ user.similar(:name, :email)
 # User.where(name: "John", email: "test@mailinator.com")
 ```
 
+Association
+------------
+
+This helper will show the Activerecord relations for a given AR model
+
+```
+<Class>.rels
+```
+
+will return a relation hash array
+
+```ruby
+class User < ActiveRecord::Base
+  has_many :roles
+end
+
+class Role < ActiveRecord::Base
+  belongs_to :user
+end
+
+User.rels #=> [{:has_many=>:roles}]
+```
