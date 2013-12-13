@@ -56,3 +56,35 @@ end
 
 User.rels #=> [{:has_many=>:roles}]
 ```
+
+
+Display columns
+------------------
+
+This helper will display all the columns of an AR object
+
+```
+<Class>.cols
+```
+
+with options
+
+```
+<Class>.cols name #=> name is the column we are searching for
+```
+
+```
+<Class>.cols name, emai #=> columns , which has the name 'name' and starting with ema
+```
+
+```ruby
+# columns -> name
+#         -> age
+class User < ActiveRecord::Base
+
+end
+
+User.cols #=> [{"name"=>"varchar(255)"}, {"age" => "INTEGER"}]
+User.cols name #=> [{"name"=>"varchar(255)"}
+User.cols name,ag #=> [{"name"=>"varchar(255)"}, {"age" => "INTEGER"}]
+```

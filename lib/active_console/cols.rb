@@ -2,10 +2,21 @@ module Cols
   extend ActiveSupport::Concern
 
   module ClassMethods
-    def cols(*args)
-      reg_str = *args.map(&:to_s).join(')|(')
-      regex = /(#{reg_str})/im
-      column_names.select{|name| name =~ regex}.sort
+    def cols(list = "")
+
+      matching_cols = []
+      searching_cols = list.split(",")
+
+      columns.each do |col|
+        if searching_cols.count > 0
+          searching_cols.select do |c|
+            matching_cols << Hash[col.name, col.sql_type] if c.strip.match(/^#{col.name}/)
+          end
+        else
+          matching_cols << Hash[col.name, col.sql_type]
+        end
+      end
+      matching_cols
     end
   end
 

@@ -17,6 +17,9 @@ describe "model columns" do
       expect(User.cols("name").count).to eq(1)
     end
 
+    fit "should give two column" do
+      expect(User.cols("name, id").count).to eq(2)
+    end
   end
 
 end
