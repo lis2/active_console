@@ -10,7 +10,7 @@ module Cols
       columns.each do |col|
         if searching_cols.count > 0
           searching_cols.select do |c|
-            matching_cols << Hash[col.name, col.sql_type] if c.strip.match(/^#{col.name}/)
+            matching_cols << Hash[col.name, col.sql_type] if col.name.match(/^#{c.strip}/)
           end
         else
           matching_cols << Hash[col.name, col.sql_type]

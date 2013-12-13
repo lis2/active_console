@@ -68,9 +68,11 @@ This helper will display all the columns of an AR object
 ```
 
 with options
+  
+  comma seperated list of column names
 
 ```
-<Class>.cols name #=> name is the column we are searching for
+<Class>.cols "name" #=> name is the column we are searching for
 ```
 
 ```
