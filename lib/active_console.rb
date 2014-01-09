@@ -1,4 +1,3 @@
-require "pry"
 require "awesome_print"
 require "active_record"
 require "active_console/version"
