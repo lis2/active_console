@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = ActiveConsole::VERSION
   spec.authors       = ["morhekil","sameera207", "noma4i", "lis2", "halhenke", "gzzengwei"]
   spec.email         = [""]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Improvements and shortcuts for Rails console}
+  spec.summary       = %q{Improvements and shortcuts for Rails console}
   spec.homepage      = ""
   spec.license       = "MIT"
 
