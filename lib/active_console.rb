@@ -14,9 +14,3 @@ module ActiveConsole
   include Similar
   include Rels
 end
-
-class IRB::TopLevel
-  def method_missing(*args)
-    args.first.to_s
-  end
-end

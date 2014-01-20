@@ -9,10 +9,10 @@ Agrep
 -----
 
 ```ruby
-User.last.agrep oh
+User.last.agrep "oh"
 # {"name"=>"John"}
 
-User.last.agrep mail
+User.last.agrep "mail"
 # {"email"=>"test@mailinator.com"}
 ```
 
@@ -20,7 +20,7 @@ Aliases
 -------
 
 ```ruby
-User.w(name: test).o(name).li(1).f
+User.w(name: "test").o("name").li(1).f
 # User.where(name: "test").order("name").limit(1).first
 ```
 
